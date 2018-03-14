@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {% for article in object_list %}
+            <div class="col-md-9 col-lg-9 ">
+                <div class="row"> 
+                 <div class="col-md-2 col-lg-2">
+
+                </div>
+                <div class="col-md-10 col-lg-10">
+                    <h4><strong><a href="article/{{ article.slug }}"> {{ article.title }}</a></strong></h4>
+                    <p>{{ article.desription }}</p>
+                    <span>
+                        <p>posted by <a href="/profile/{{ article.posted_by }}">{{ article.posted_by }}</a> {{ news.posted_on  }}</p>
+                    </span>
+                </div>
+                </div>
+            </div>
+             {% endfor %}
+        </div> 
+    </div>
+
+</div>
+
+{% if is_paginated %}
+<div class="pagination">
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">More &raquo;</a>
+    {% endif %}
+</div>
+{% endif %}
+
+
+{% endblock %}

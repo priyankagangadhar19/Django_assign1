@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-xs-12">
+		<h3>Submit new Article</h3> 
+	</div>
+	<div class="col-lg-3 col-md-6 col-xs-12">
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-6">
+	<form class="form-class" action='/submit/' method='post'>{% csrf_token %}
+	{{ form.as_p }}
+	<input type='submit' value='Submit' />
+	</form>
+	</div>
+
+</div>
+{% endblock %}

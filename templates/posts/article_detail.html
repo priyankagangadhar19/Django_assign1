@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+    <div class="col-sm-8">
+        <h2>{{ object.title }}</h2><br>
+        {% if object.description %}
+        <p>{{ object.description }}</p>
+        {% endif %}
+        <p>posted by: {{ object.posted_by }} {{ object.posted_on }} </p>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<br/>
+<br/>
+<br/>
+<div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-4 col-sm-offset-3">
+                <form role="form" method="POST" action="login/">
+                    {% csrf_token %}
+                    {% if error %}
+                            <div class="alert alert-dismissible alert-danger">
+						  <button type="button" class="close" data-dismiss="alert">×</button>
+						  <strong> <b>The username / email or password is invalid.</b></strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
+					</div>
+                        {% endif %}
+                    <div class="form-group">
+                        <label for="email">Email or Username</label>
+                        <input type="text" class="form-control" id="email" autofocus  name="username_or_email" >
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password"  name="password" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-lg btn-wide btn-success">Login</button>
+                    </div>
+                    <a href="/register/">Register</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock %}

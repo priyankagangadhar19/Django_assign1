@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+    <div class="col-sm-8">
+        <h2>{{ object.username }}</h2><br>
+     about:   <h2>{{ object.userprofile.about }}</h2><br>
+     Karma:    <h2>{{ object.userprofile.karma }}</h2>
+    </div>
+    </div>
+{% endblock %}
